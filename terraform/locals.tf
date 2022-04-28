@@ -1,5 +1,5 @@
 locals {
-  cr_namespace    = "assistant-curator"
+  cr_namespace    = "assistant-curator-${formatdate("DDMMYYYYhhmmss", timestamp())}"
   db2_jdbc        = replace(ibm_resource_key.db2.credentials["connection.db2.jdbc_url.0"], "user=<userid>;password=<your_password>;", "")
   ce_project_name = "assistant-curation-${formatdate("DDMMYYYYhhmmss", timestamp())}"
   nlu_id          = length(var.nlu_name) > 0 ? data.ibm_resource_instance.nlu[0].id : ibm_resource_instance.nlu[0].id
