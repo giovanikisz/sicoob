@@ -15,7 +15,7 @@ locals {
   actions = [
     {
       "name" : "create-tables-cf",
-      "code_path" : "../../cloud-functions/create-tables-cf.zip",
+      "code_path" : "../cloud-functions/create-tables-cf.zip",
       "user_defined_parameters" : <<EOF
         [
       {
@@ -71,22 +71,22 @@ locals {
     },
     {
       "name" : "process-logs-cf",
-      "code_path" : "../../cloud-functions/process-logs-cf.zip",
+      "code_path" : "../cloud-functions/process-logs-cf.zip",
       "user_defined_parameters" : jsonencode([])
     },
     {
       "name" : "process-conversations-cf",
-      "code_path" : "../../cloud-functions/process-conversations-cf.zip",
+      "code_path" : "../cloud-functions/process-conversations-cf.zip",
       "user_defined_parameters" : jsonencode([])
     },
     {
       "name" : "enrichment-cf",
-      "code_path" : "../../cloud-functions/enrichment-cf.zip",
+      "code_path" : "../cloud-functions/enrichment-cf.zip",
       "user_defined_parameters" : jsonencode([])
     },
     {
       "name" : "insert-logs-cf",
-      "code_path" : "../../cloud-functions/insert-logs-cf.zip",
+      "code_path" : "../cloud-functions/insert-logs-cf.zip",
       "user_defined_parameters" : jsonencode([])
     }
   ]
