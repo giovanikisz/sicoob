@@ -70,22 +70,22 @@ locals {
      EOF
     },
     {
-      "name" : "process-logs",
+      "name" : "process-logs-cf",
       "code_path" : "../cloud-functions/process-logs-cf.zip",
       "user_defined_parameters" : jsonencode([])
     },
     {
-      "name" : "process-conversations",
+      "name" : "process-conversations-cf",
       "code_path" : "../cloud-functions/process-conversations-cf.zip",
       "user_defined_parameters" : jsonencode([])
     },
     {
-      "name" : "enrichment",
+      "name" : "enrichment-cf",
       "code_path" : "../cloud-functions/enrichment-cf.zip",
       "user_defined_parameters" : jsonencode([])
     },
     {
-      "name" : "insert-logs",
+      "name" : "insert-logs-cf",
       "code_path" : "../cloud-functions/insert-logs-cf.zip",
       "user_defined_parameters" : jsonencode([])
     }

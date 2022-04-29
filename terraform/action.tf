@@ -15,6 +15,17 @@ resource "ibm_function_namespace" "namespace" {
   resource_group_id = data.ibm_resource_group.group.id
 }
 
+resource "null_resource" "actions" {
+  provisioner "local-exec" {
+    count   = length(local.actions)
+    command = "/bin/bash scripts/zip_cf.sh"
+
+    environment = {
+      FILENAME = local.actions[count.index].name
+      FILEPATH = local.actions[count.index].code_path
+    }
+  }
+}
 
 resource "ibm_function_action" "action" {
   count                   = length(local.actions)
@@ -26,6 +37,7 @@ resource "ibm_function_action" "action" {
     code_path = local.actions[count.index].code_path
     kind      = "nodejs:12"
   }
+  depends_on = [null_resource.actions]
 }
 
 resource "ibm_function_action" "sequence" {
